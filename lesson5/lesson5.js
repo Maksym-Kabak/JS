@@ -107,7 +107,7 @@
 // ==============================================
 
 
-//
+
 // let car = {
 //     model:'Porsche 911',
 //     producer: 'Germany',
@@ -119,19 +119,22 @@
 //     info : function () {
 //         document.write(`Моя машина ${this.model}, її зробили в ${this.producer} ${this.year}, Об'єм двигуна ${this.engine} куб. см.`)
 //
-//     }
+//     },
+//     increaseMaxSpeed: function(newSpeed) {
+//     this.maxSpeed += newSpeed;
+// },
 // };
 //
 // car.drive();
 // car.info();
-// car.maxSpeed = 'newSpeed';
+// car.increaseMaxSpeed(12)
 // car.year = 'newValue';
 // car.driver = {
 //     name: 'Jorik',
 //     age: 16
 // };
 // console.log(car);
-//
+
 // ==============================================
 //     - Створити функцію конструктор яка дозволяє створювати об'єкти car, з властивостями модель, виробник,
 //     рік випуску, максимальна швидкість, об'єм двигуна. додати в об'єкт функції:
@@ -171,26 +174,19 @@
 // ==============================================
 //
 
-
-// ==============================================
-//     -створити класс попелюшка з полями ім'я, вік, розмір ноги
-// --Створити 10 попелюшок , покласти їх в масив
-// --Сторити об'єкт класу "принц" за допомоги класу який має поля ім'я, вік, туфелька яку він знайшов.
-// -- за допоиоги циклу знайти яка попелюшка повинна бути з принцом
-// ==============================================
-
-// class Peopple {
-//     constructor(name,age,footSize) {
-//         this.name = name;
-//         this.age = age;
-//         this.footSize = footSize;
-//     }
-// }
 function Human(name, age, footSize) {
     this.name = name;
     this.age = age;
     this.footSize = footSize;
+    this.findPrinces = function (arr) {
+        for (const item of arr) {
+            if (this.footSize === item.footSize) {
+                document.write(`${this.name} твоя попелюшка ${item.name}`)
+            }
+        }
+    }
 }
+
 let сinderella = [
     new Human('Gosha', '27', 44),
     new Human('Aga', '44', 36),
@@ -204,11 +200,48 @@ let сinderella = [
     new Human('Akimonan', '38', 35),
 ];
 
-let сinderellaMan = [
-    new Human('Przemek', 23, 37)
+let cinderellaMan = new Human('Przemek', 23, 45);
+cinderellaMan.findPrinces(сinderella);
+
+// ==============================================
+//     -створити класс попелюшка з полями ім'я, вік, розмір ноги
+// --Створити 10 попелюшок , покласти їх в масив
+// --Сторити об'єкт класу "принц" за допомоги класу який має поля ім'я, вік, туфелька яку він знайшов.
+// -- за допоиоги циклу знайти яка попелюшка повинна бути з принцом
+// ==============================================
+
+class Cinderella {
+    constructor(name, age, footSize) {
+        this.name = name;
+        this.age = age;
+        this.footSize = footSize;
+    }
+}
+
+class Prince extends Cinderella {
+    constructor(name, agent, footSize) {
+        super(name, agent, footSize);
+    }
+
+}
+let princesses = [
+    new Cinderella('Gosha', '27', 44),
+    new Cinderella('Aga', '44', 36),
+    new Cinderella('Basia', '32', 40),
+    new Cinderella('Dorota', '22', 37),
+    new Cinderella('Paulina', '33', 38),
+    new Cinderella('Kinga', '25', 35),
+    new Cinderella('Edyta', '21', 45),
+    new Cinderella('Anna', '45', 42),
+    new Cinderella('Natalia', '53', 34),
+    new Cinderella('Akimonan', '38', 35),
 ];
 
-function myСinderella(array1, array2) {
+ let princeJora= [new Prince('Жора', 23, 37)];
+
+
+
+function myPrincess(array1, array2) {
     let littleFoot = [];
     for (const element of array1) {
         for (const element2 of array2) {
@@ -222,5 +255,8 @@ function myСinderella(array1, array2) {
     return littleFoot;
 }
 
-let myСinderella1 = myСinderella(сinderella,сinderellaMan);
-console.log(myСinderella1);
+let popados = myPrincess(princesses,princeJora);
+console.log(popados);
+
+
+
