@@ -186,41 +186,41 @@
 //         this.footSize = footSize;
 //     }
 // }
-// function Human(name, age, footSize) {
-//     this.name = name;
-//     this.age = age;
-//     this.footSize = footSize;
-// }
-// let сinderella = [
-//     new Human('Gosha', '27', 44),
-//     new Human('Aga', '44', 36),
-//     new Human('Basia', '32', 40),
-//     new Human('Dorota', '22', 37),
-//     new Human('Paulina', '33', 38),
-//     new Human('Kinga', '25', 35),
-//     new Human('Edyta', '21', 45),
-//     new Human('Anna', '45', 42),
-//     new Human('Natalia', '53', 34),
-//     new Human('Akimonan', '38', 35),
-// ];
-//
-// let сinderellaMan = [
-//     new Human('Przemek', 23, 37)
-// ];
-//
-// function myСinderella(array1, array2) {
-//     let littleFoot = [];
-//     for (const element of array1) {
-//         for (const element2 of array2) {
-//             if (element.footSize === element2.footSize) {
-//                 element.maried = element2;
-//                 littleFoot.push(element);
-//                 document.write(`<h1>Ти знайшов свою принцесу її звати ${element.name}</h1>`);
-//             }
-//         }
-//     }
-//     return littleFoot;
-// }
-//
-// let myСinderella1 = myСinderella(сinderella,сinderellaMan);
-// console.log(myСinderella1);
+function Human(name, age, footSize) {
+    this.name = name;
+    this.age = age;
+    this.footSize = footSize;
+}
+let сinderella = [
+    new Human('Gosha', '27', 44),
+    new Human('Aga', '44', 36),
+    new Human('Basia', '32', 40),
+    new Human('Dorota', '22', 37),
+    new Human('Paulina', '33', 38),
+    new Human('Kinga', '25', 35),
+    new Human('Edyta', '21', 45),
+    new Human('Anna', '45', 42),
+    new Human('Natalia', '53', 34),
+    new Human('Akimonan', '38', 35),
+];
+
+let сinderellaMan = [
+    new Human('Przemek', 23, 37)
+];
+
+function myСinderella(array1, array2) {
+    let littleFoot = [];
+    for (const element of array1) {
+        for (const element2 of array2) {
+            if (element.footSize === element2.footSize) {
+                element.maried = element2;
+                littleFoot.push(element);
+                document.write(`<h1>${element2.name} знайшов свою принцесу її звати ${element.name}</h1>`);
+            }
+        }
+    }
+    return littleFoot;
+}
+
+let myСinderella1 = myСinderella(сinderella,сinderellaMan);
+console.log(myСinderella1);
