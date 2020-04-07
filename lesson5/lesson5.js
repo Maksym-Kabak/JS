@@ -107,7 +107,6 @@
 // ==============================================
 
 
-
 // let car = {
 //     model:'Porsche 911',
 //     producer: 'Germany',
@@ -224,6 +223,7 @@ class Prince extends Cinderella {
     }
 
 }
+
 let princesses = [
     new Cinderella('Gosha', '27', 44),
     new Cinderella('Aga', '44', 36),
@@ -237,26 +237,20 @@ let princesses = [
     new Cinderella('Akimonan', '38', 35),
 ];
 
- let princeJora= [new Prince('Жора', 23, 37)];
+let princeJora = [new Prince('Жора', 23, 37)];
 
 
-
-function myPrincess(array1, array2) {
-    let littleFoot = [];
-    for (const element of array1) {
-        for (const element2 of array2) {
-            if (element.footSize === element2.footSize) {
-                element.maried = element2;
-                littleFoot.push(element);
-                document.write(`<h1>${element2.name} знайшов свою принцесу її звати ${element.name}</h1>`);
-            }
+let littleFoot = [];
+for (const princes of princesses) {
+    for (const element2 of princeJora) {
+        if (princes.footSize === element2.footSize) {
+            princes.maried = element2;
+            littleFoot.push(princes);
+            document.write(`<h1>${element2.name} знайшов свою принцесу її звати ${princes.name}</h1>`);
         }
     }
-    return littleFoot;
 }
 
-let popados = myPrincess(princesses,princeJora);
-console.log(popados);
-
+console.log(littleFoot);
 
 
