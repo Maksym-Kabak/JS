@@ -173,34 +173,34 @@
 // ==============================================
 //
 
-function Human(name, age, footSize) {
-    this.name = name;
-    this.age = age;
-    this.footSize = footSize;
-    this.findPrinces = function (arr) {
-        for (const item of arr) {
-            if (this.footSize === item.footSize) {
-                document.write(`${this.name} твоя попелюшка ${item.name}`)
-            }
-        }
-    }
-}
-
-let сinderella = [
-    new Human('Gosha', '27', 44),
-    new Human('Aga', '44', 36),
-    new Human('Basia', '32', 40),
-    new Human('Dorota', '22', 37),
-    new Human('Paulina', '33', 38),
-    new Human('Kinga', '25', 35),
-    new Human('Edyta', '21', 45),
-    new Human('Anna', '45', 42),
-    new Human('Natalia', '53', 34),
-    new Human('Akimonan', '38', 35),
-];
-
-let cinderellaMan = new Human('Przemek', 23, 45);
-cinderellaMan.findPrinces(сinderella);
+// function Human(name, age, footSize) {
+//     this.name = name;
+//     this.age = age;
+//     this.footSize = footSize;
+//     this.findPrinces = function (arr) {
+//         for (const item of arr) {
+//             if (this.footSize === item.footSize) {
+//                 document.write(`${this.name} твоя попелюшка ${item.name}`)
+//             }
+//         }
+//     }
+// }
+//
+// let сinderella = [
+//     new Human('Gosha', '27', 44),
+//     new Human('Aga', '44', 36),
+//     new Human('Basia', '32', 40),
+//     new Human('Dorota', '22', 37),
+//     new Human('Paulina', '33', 38),
+//     new Human('Kinga', '25', 35),
+//     new Human('Edyta', '21', 45),
+//     new Human('Anna', '45', 42),
+//     new Human('Natalia', '53', 34),
+//     new Human('Akimonan', '38', 35),
+// ];
+//
+// let cinderellaMan = new Human('Przemek', 23, 45);
+// cinderellaMan.findPrinces(сinderella);
 
 // ==============================================
 //     -створити класс попелюшка з полями ім'я, вік, розмір ноги
@@ -235,22 +235,24 @@ let princesses = [
     new Cinderella('Anna', '45', 42),
     new Cinderella('Natalia', '53', 34),
     new Cinderella('Akimonan', '38', 35),
+
 ];
-
-let princeJora = [new Prince('Жора', 23, 37)];
-
-
-let littleFoot = [];
-for (const princes of princesses) {
-    for (const element2 of princeJora) {
-        if (princes.footSize === element2.footSize) {
-            princes.maried = element2;
-            littleFoot.push(princes);
-            document.write(`<h1>${element2.name} знайшов свою принцесу її звати ${princes.name}</h1>`);
-        }
+let prince = new Prince('Жора', 23, 37);
+for (const key in princesses) {
+    if (princesses[key].footSize === prince.footSize) {
+        console.log(princesses[key])
     }
 }
 
-console.log(littleFoot);
+// console.log(littleFoot);
 
 
+// for (const princes of princesses) {
+//     for (const element2 of princeJora) {
+//         if (princes.footSize === element2.footSize) {
+//             princes.maried = element2;
+//             littleFoot.push(princes);
+//             document.write(`<h1>${element2.name} знайшов свою принцесу її звати ${princes.name}</h1>`);
+//         }
+//     }
+// }

@@ -83,7 +83,8 @@ let server = new ClubComp('server',100,48,'Ubunta',2000,1000);
 
 zenBook.update(100,100,100);
 
-pentiumOne.play(dota2);
-alienware.play(dota2);
-samsung.play(dota2);
-server.play(dota2);
+pentiumOne.update(100,100,100);
+// pentiumOne.play(dota2)
+// alienware.play(dota2);
+// samsung.play(dota2);
+// server.play(dota2);
